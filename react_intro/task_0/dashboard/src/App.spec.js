@@ -28,7 +28,7 @@ describe('App component', () => {
     test('renders image with correct alt', () => {
         render(<App />)
 
-        const imgElement = screen.getByAltText(/holberton-logo/i)
+        const imgElement = screen.getByAltText(/holberton logo/i)
 
         expect(imgElement).toBeInTheDocument()
     })
