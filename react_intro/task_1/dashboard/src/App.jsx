@@ -10,7 +10,7 @@ function App() {
         <Notifications />
       </div>
       <div className='App-header'>
-        <img src={Logo} alt='holberton-logo' />
+        <img src={Logo} alt='holberton logo' />
         <h1>School Dashboard</h1>
       </div>
       <div className='App-body'>
