@@ -27,11 +27,11 @@ export default defineConfig([
     },
   },
   {
-    files: ['**/*.test.{js,jsx}', '**/__tests__/**/*.{js,jsx}'],
+    files: ['**/*.test.{js,jsx}', '**/*.spec.{js,jsx}', '**/__tests__/**/*.{js,jsx}'],
     languageOptions: {
       globals: {
         ...globals.jest,
       },
     },
-  },
+  }
 ])
