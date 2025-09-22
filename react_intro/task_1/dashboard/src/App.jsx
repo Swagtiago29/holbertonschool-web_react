@@ -1,7 +1,7 @@
 import './App.css'
 import Logo from './assets/holberton-logo.jpg'
 import { getCurrentYear, getFooterCopy } from './utils'
-import { Notifications } from './Notifications'
+import Notifications from './Notifications.jsx'
 function App() {
 
   return (
