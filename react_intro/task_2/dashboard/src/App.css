@@ -26,3 +26,8 @@
   border: 2px #e1003c dotted;
   padding-left: 15px;
 }
+
+input:focus {
+  border-color: red;
+  outline: none;        /* removes the default browser blue outline */;
+}
