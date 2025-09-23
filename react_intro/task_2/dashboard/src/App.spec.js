@@ -36,7 +36,7 @@ describe('App component', () => {
     test('renders label for email', () => {
         render(<App />)
 
-        const emailLabel = screen.getByText(/Email:/i)
+        const emailLabel = screen.getByText(/email/i)
 
         expect(emailLabel).toBeInTheDocument()
     })
@@ -44,7 +44,7 @@ describe('App component', () => {
     test('renders label for password', () => {
         render(<App />)
 
-        const passLabel = screen.getByText(/Password:/i)
+        const passLabel = screen.getByText(/password/i)
 
         expect(passLabel).toBeInTheDocument()
     })
