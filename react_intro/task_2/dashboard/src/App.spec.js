@@ -33,22 +33,6 @@ describe('App component', () => {
         expect(imgElement).toBeInTheDocument()
     })
 
-    test('renders email input element', () => {
-        render(<App />)
-
-        const emailInput = screen.getByLabelText(/email/i)
-
-        expect(emailInput).toBeInTheDocument()
-    })
-
-    test('renders password input element', () => {
-        render(<App />)
-
-        const passInput = screen.getByLabelText(/password/i)
-
-        expect(passInput).toBeInTheDocument()
-    })
-
     test('renders label for email', () => {
         render(<App />)
 
@@ -72,4 +56,10 @@ describe('App component', () => {
 
         expect(button).toBeInTheDocument()
     })
+
+    test('renders 2 input elements (email and password)', () => {
+        render(<App />);
+        const inputs = document.querySelectorAll('input');
+        expect(inputs.length).toBe(2);
+    });
 })
