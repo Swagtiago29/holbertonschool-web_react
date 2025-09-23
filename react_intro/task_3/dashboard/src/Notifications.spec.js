@@ -6,7 +6,7 @@ describe('Notifications Test', () => {
 
     test('inner p renders correctly', () => {
         render(<Notifications />)
-        const pInner = screen.getByText('Here is the list of notifications')
+        const pInner = screen.getByText(/here is the list of notifications/i)
         expect(pInner).toBeInTheDocument()
     })
 
@@ -23,7 +23,7 @@ describe('Notifications Test', () => {
     })
 
     test('should log when button clicked', () => {
-        const logSpy = jest.spyOn(console, 'log').mockImplementation(() => {}) 
+        const logSpy = jest.spyOn(console, 'log').mockImplementation(() => { })
         render(<Notifications />)
 
         const closeButton = screen.getByRole('button')
