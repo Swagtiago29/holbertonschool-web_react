@@ -36,7 +36,7 @@ describe('App component', () => {
     test('renders email input element', () => {
         render(<App />)
 
-        const emailInput = screen.getByRole('textbox', { name: /email/i })
+        const emailInput = screen.getByLabelText(/email/i)
 
         expect(emailInput).toBeInTheDocument()
     })
@@ -44,7 +44,7 @@ describe('App component', () => {
     test('renders password input element', () => {
         render(<App />)
 
-        const passInput = screen.getByRole('textbox', { name: /password/i })
+        const passInput = screen.getByLabelText(/password/i)
 
         expect(passInput).toBeInTheDocument()
     })
