@@ -1,4 +1,5 @@
 import './App.css'
+import Logo from './assets/holberton-logo.jpg'
 import { getCurrentYear, getFooterCopy } from './utils.js'
 import Notifications from './Notifications.jsx'
 function App() {
@@ -9,7 +10,7 @@ function App() {
         <Notifications />
       </div>
       <div className='App-header'>
-        <img src="/holberton-logo.jpg" alt='holberton logo' />
+        <img src={Logo} alt='holberton logo' />
         <h1>School Dashboard</h1>
       </div>
       <div className='App-body'>

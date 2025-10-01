@@ -1,4 +1,5 @@
 import React from 'react'
+import CloseButton from './assets/close-button.png'
 import { getLatestNotification } from './utils'
 
 function Notifications() {
@@ -16,7 +17,7 @@ function Notifications() {
             <button aria-label='Close'
                 style={ButtonStyle}
                 onClick={() => console.log('Close button has been clicked')}>
-                <img src="/close-button.png" width={'10px'} height={'10px'} />
+                <img src={CloseButton} width={'10px'} height={'10px'} />
             </button>
             <p>Here is the list of notifications</p>
             <ul>
