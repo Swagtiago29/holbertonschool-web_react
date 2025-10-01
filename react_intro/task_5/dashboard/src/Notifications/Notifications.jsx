@@ -1,5 +1,5 @@
 import React from 'react'
-import CloseButton from './assets/close-button.png'
+import CloseButton from '../assets/close-button.png'
 import { getLatestNotification } from '../utils/utils'
 
 function Notifications() {
