@@ -1,5 +1,9 @@
 import { render, screen, fireEvent } from "@testing-library/react";
+<<<<<<< HEAD
 import Notifications from "./Notifications";
+=======
+import Notifications from "../../../../task_3/dashboard/src/Notifications";
+>>>>>>> refs/remotes/origin/main
 import '@testing-library/jest-dom'
 
 describe('Notifications Test', () => {
@@ -29,6 +33,10 @@ describe('Notifications Test', () => {
         const closeButton = screen.getByRole('button')
         fireEvent.click(closeButton)
 
+<<<<<<< HEAD
         expect(logSpy).toHaveBeenCalledWith("Close button has been clicked")
+=======
+        expect(logSpy).toHaveBeenCalledWith(/close button has been clicked/i)
+>>>>>>> refs/remotes/origin/main
     })
 })

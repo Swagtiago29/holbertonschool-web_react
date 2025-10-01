@@ -1,6 +1,10 @@
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
+<<<<<<< HEAD
 import App from './App'
+=======
+import App from '../App'
+>>>>>>> refs/remotes/origin/main
 
 describe('App component', () => {
 
