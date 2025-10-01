@@ -29,6 +29,6 @@ describe('Notifications Test', () => {
         const closeButton = screen.getByRole('button')
         fireEvent.click(closeButton)
 
-        expect(logSpy).toHaveBeenCalledWith('Close button has been clicked')
+        expect(logSpy).toHaveBeenCalledWith(/close button has been clicked/i)
     })
 })
