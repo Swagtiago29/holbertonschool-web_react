@@ -1,0 +1,13 @@
+.root-notifications {
+    border: 2px #e1003c dotted;
+    padding-left: 15px;
+}
+
+
+li[data-priority="urgent"] {
+    color: rgb(255, 0, 0);
+}
+
+li[data-priority="default"] {
+    color: rgb(0, 0, 255);
+}
