@@ -15,7 +15,7 @@ describe('App Component', () => {
 
   test('renders Login component', () => {
     render(<App />)
-    expect(screen.getByText(/log in/i)).toBeInTheDocument()
+    expect(screen.getByText(/login to access the full dashboard/i)).toBeInTheDocument()
   })
 
   test('renders Footer component', () => {
