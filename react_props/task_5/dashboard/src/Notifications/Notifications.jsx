@@ -3,11 +3,11 @@ import './Notifications.css'
 import CloseButton from '../assets/close-button.png'
 import NotificationItem from './NotificationItem'
 
-function Notifications({ notifications = [], displayDrawer = false }) {
+function Notifications({ notifications = [], displayDrawer = true }) {
     const buttonStyle = {
         position: 'absolute',
-        right: '10px',
-        top: '10px',
+        right: '15px',
+        top: '30px',
         border: 'none',
         background: 'none',
         cursor: 'pointer',
