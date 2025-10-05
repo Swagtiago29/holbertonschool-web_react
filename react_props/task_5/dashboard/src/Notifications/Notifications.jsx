@@ -3,7 +3,7 @@ import './Notifications.css'
 import CloseButton from '../assets/close-button.png'
 import NotificationItem from './NotificationItem'
 
-function Notifications({ notifications = [], displayDrawer = true }) {
+function Notifications({ notifications = [], displayDrawer = false }) {
     const buttonStyle = {
         position: 'absolute',
         right: '15px',
