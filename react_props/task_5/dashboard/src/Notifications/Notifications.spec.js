@@ -22,14 +22,14 @@ describe('Notifications Test', () => {
     })
 
     test('list elements render correctly', () => {
-        render(<Notifications notifications={testNotifications} displayDrawer={true }/>)
+        render(<Notifications notifications={testNotifications} displayDrawer={true} />)
         const listElements = screen.getAllByRole('listitem')
         expect(listElements.length).toBe(3)
     })
 
     test('should log when button clicked', () => {
         const logSpy = jest.spyOn(console, 'log').mockImplementation(() => { })
-        render(<Notifications notifications={testNotifications} displayDrawer={true}/>)
+        render(<Notifications notifications={testNotifications} displayDrawer={true} />)
 
         const closeButton = screen.getByRole('button')
         fireEvent.click(closeButton)
@@ -66,5 +66,15 @@ describe('Notifications Test', () => {
         const pElement = screen.queryByText(/here is the list of notifications/i)
         expect(pElement).not.toBeInTheDocument()
 
+    })
+
+    test('should render "No new notification for now" when displayDrawer is true and notifications is empty', () => {
+        render(<Notifications displayDrawer={true} />)
+
+        const notificationsWarning = screen.getByText(/no new notification for now/i)
+        expect(notificationsWarning).toBeInTheDocument()
+
+        const notificationsTitle = screen.getByText(/your notifications/i)
+        expect(notificationsTitle).toBeInTheDocument()
     })
 })
