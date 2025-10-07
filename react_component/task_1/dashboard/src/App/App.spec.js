@@ -54,7 +54,7 @@ describe('App Component keydown events', () => {
   })
 
   test('should call LogOut()once when crtl and h is down', () => {
-    LogOutMock = jest.fn()
+    const LogOutMock = jest.fn()
     render(<App isLoggedIn={true} LogOut={LogOutMock} />)
 
     fireEvent.keyDown(document, {
