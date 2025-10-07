@@ -79,4 +79,16 @@ describe('App Component keydown events', () => {
 
     expect(alertMock).toHaveBeenCalledWith("Logging you out")
   })
+
+  test('should render title and p', () => { 
+    render(<App />)
+
+    const title = screen.getByText('News from the School')
+    expect(title).toBeInTheDocument()
+    expect(title.tagName).toBe('H2')
+
+    const p = screen.getByText('Holberton School News goes here')
+    expect(p).toBeInTheDocument()
+
+  })
 })
