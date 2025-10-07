@@ -9,7 +9,7 @@ import CourseList from '../CourseList/CourseList.jsx'
 class App extends React.Component {
   static defaultProps = {
     isLoggedIn: false,
-    LogOut: () => { }
+    logOut: () => { }
   }
 
   componentDidMount() {
@@ -23,7 +23,7 @@ class App extends React.Component {
   handleKeyDown = (event) => {
     if(event.ctrlKey && event.key === 'h'){
       alert('Logging you out')
-      this.props.LogOut()
+      this.props.logOut()
     }
   }
   render() {
