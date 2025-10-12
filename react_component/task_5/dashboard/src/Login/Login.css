@@ -1,0 +1,13 @@
+.App-body {
+  height: 200px;
+}
+
+input{
+    margin: 10px;
+}
+input:focus {
+  border-color: red;
+  border-radius: 3px;
+  outline: none;
+  /* removes the default browser blue outline */
+}
