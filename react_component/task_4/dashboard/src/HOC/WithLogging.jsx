@@ -1,7 +1,25 @@
+import React from 'react'
+
 function WithLogging(WrappedComponent) {
-    return class extends React.Component {
+    class WithLoggingHOC extends React.Component {
         componentDidMount() {
-            console.log(`Component ${} is mounted`)
+            const name = WrappedComponent.displayName || WrappedComponent.name || 'Component'
+            console.log(`Component ${name} is mounted`)
+        }
+
+        componentWillUnmount() {
+            const name = WrappedComponent.displayName || WrappedComponent.name || 'Component'
+            console.log(`Component ${name} is going to unmount`)
+        }
+
+        render() {
+            return <WrappedComponent {...this.props} />
         }
     }
+    // Set display name for debugging in React DevTools
+    const name = WrappedComponent.displayName || WrappedComponent.name || 'Component'
+    WithLoggingHOC.displayName = `WithLogging(${name})`
+
+    return WithLoggingHOC
 }
+export default WithLogging

@@ -7,6 +7,11 @@ import Header from '../Header/Header.jsx'
 import CourseList from '../CourseList/CourseList.jsx'
 import BodySectionWithMarginBottom from '../BodySection/BodySectionWithMarginBottom.jsx'
 import BodySection from '../BodySection/BodySection.jsx'
+import WithLogging from '../HOC/WithLogging.jsx'
+
+// Wrap with the HOC
+const LoginWithLogging = WithLogging(Login)
+const CourseListWithLogging = WithLogging(CourseList)
 
 class App extends React.Component {
   static defaultProps = {
@@ -72,11 +77,11 @@ class App extends React.Component {
         <Header />
         {isLoggedIn ?
           <BodySectionWithMarginBottom title={'Course list'}>
-            <CourseList courses={coursesList} />
+            <CourseListWithLogging courses={coursesList} />
           </BodySectionWithMarginBottom>
           :
           <BodySectionWithMarginBottom title={'Log in to continue'}>
-            <Login />
+            <LoginWithLogging />
           </BodySectionWithMarginBottom>
         }
         <BodySection title={'News from the School'}>
