@@ -9,6 +9,10 @@ class Notifications extends React.Component {
         displayDrawer: true
     }
 
+    shouldComponentUpdate(nextProps) {
+        return nextProps.notifications.length !== this.props.notifications.length
+    }
+
     markAsRead = (id) => {
         console.log(`Notification ${id} has been marked as read`)
     }
@@ -24,8 +28,8 @@ class Notifications extends React.Component {
             padding: '0px 2px'
         }
 
-        const {notifications} = this.props
-        const {displayDrawer} = this.props
+        const { notifications } = this.props
+        const { displayDrawer } = this.props
 
         return (
             <div className="notifications-container">
