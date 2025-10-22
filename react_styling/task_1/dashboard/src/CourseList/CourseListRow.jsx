@@ -1,6 +1,6 @@
 
 function CourseListRow({ isHeader = true, textFirstCell = "", textSecondCell = null }) {
-    const rowClass = isHeader ? "bg-[var(--color-table-header)]/44" : "bg-[var(--color-table-rows)]/44"
+    const rowClass = isHeader ? "bg-[var(--color-table-header)]/66" : "bg-[var(--color-table-rows)]/45"
     if (isHeader) {
         if (textSecondCell === null) {
             return (
