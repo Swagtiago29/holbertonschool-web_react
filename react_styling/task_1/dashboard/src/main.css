@@ -1,0 +1,23 @@
+@import "tailwindcss";
+@import "@fontsource/roboto/400.css";
+@import "@fontsource/roboto/500.css";
+@import "@fontsource/roboto/700.css";
+
+@layer base {
+    :root {
+        --font-roboto: 'Roboto', sans-serif;
+        --color-table-header: #deb5b5;
+        --color-table-rows: #CDCDCD;
+    }
+
+    body {
+        @apply font-sans;
+        font-family: var(--font-roboto);
+    }
+
+    td,
+    th {
+        @apply  pl-2 border border-purple-400;
+    }
+
+}
