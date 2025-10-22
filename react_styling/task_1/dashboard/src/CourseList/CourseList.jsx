@@ -4,7 +4,7 @@ import CourseListRow from './CourseListRow'
 function CourseList({ courses = [] }) {
     return (
         <div className='w-[80%] md:w-[90%] mx-auto my-8'>
-            <table id='CourseList' >
+            <table id='CourseList' className='w-full'>
                 {courses.length === 0 ? null :
                     <thead>
                         <CourseListRow isHeader={true} textFirstCell='Available courses' />
