@@ -1,6 +1,5 @@
 import React from 'react'
 import CourseListRow from './CourseListRow'
-import './CourseList.css'
 
 function CourseList({ courses = [] }) {
     return (
