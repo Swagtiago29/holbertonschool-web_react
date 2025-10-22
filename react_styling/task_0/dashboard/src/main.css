@@ -1,10 +1,10 @@
-@import  'tailwindcss';
+@import "tailwindcss";
 @import "@fontsource/roboto/400.css";
 @import "@fontsource/roboto/500.css";
 @import "@fontsource/roboto/700.css";
 
 @layer base {
-    :root{
+    :root {
         --font-roboto: 'Roboto', sans-serif
     }
 
