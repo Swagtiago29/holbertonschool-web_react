@@ -1,6 +1,6 @@
 
 function CourseListRow({ isHeader = true, textFirstCell = "", textSecondCell = null }) {
-    const rowClass = isHeader ? "bg-[var(--color-table-header)]/66" : "bg-[var(--color-table-rows)]/44"
+    const rowClass = isHeader ? "bg-[var(--color-table-header)]/44" : "bg-[var(--color-table-rows)]/44"
     if (isHeader) {
         if (textSecondCell === null) {
             return (
@@ -11,8 +11,8 @@ function CourseListRow({ isHeader = true, textFirstCell = "", textSecondCell = n
         }
         return (
             <tr className={rowClass}>
-                <th className="pl-2 border border-gray-400">{textFirstCell}</th>
-                <th className="pl-2 border border-gray-400">{textSecondCell}</th>
+                <th>{textFirstCell}</th>
+                <th>{textSecondCell}</th>
             </tr>
         )
     }

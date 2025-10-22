@@ -17,7 +17,7 @@
 
     td,
     th {
-        @apply  pl-2 border border-purple-400;
+        @apply  pl-2 border border-gray-400;
     }
 
 }
