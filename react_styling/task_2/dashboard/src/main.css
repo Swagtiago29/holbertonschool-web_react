@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-table-header: #deb5b5;
+    --color-table-rows: #cdcdcd;
+    --main-color: #e1003c;
+    --default-botification-item: blue;
+    --urgent-notification-item: red;
+  }
+}
+
+@layer base {
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  td,
+  th {
+    @apply border border-gray-400 pl-2;
+  }
+
+  ul {
+    @apply list-disc;
+  }
+  li{
+    display: list-item;
+  }
+
+}
