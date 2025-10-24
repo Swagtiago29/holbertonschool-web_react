@@ -8,7 +8,7 @@
 }
 
 @layer base {
-  html {
+  :root {
     font-family: var(--font-sans);
   }
 }
