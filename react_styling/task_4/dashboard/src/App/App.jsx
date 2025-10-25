@@ -72,7 +72,7 @@ class App extends React.Component {
 
     return (
       <>
-        <Notifications notifications={notificationsList} />
+        {/*<Notifications notifications={notificationsList} />*/}
         <Header />
         {isLoggedIn ?
           <BodySectionWithMarginBottom title={'Course list'}>

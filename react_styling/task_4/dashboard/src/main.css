@@ -7,7 +7,6 @@
     --main-color: #e1003c;
     --default-botification-item: blue;
     --urgent-notification-item: red;
-    padding: 10px;
     font-size: large;
   }
 
@@ -22,13 +21,13 @@
     border-collapse: collapse;
   }
 
+  body {
+    @apply p-3 max-[912px]:p-0;
+  }
+
   td,
   th {
     @apply border border-gray-400 pl-2;
-  }
-
-  ul {
-    @apply list-disc;
   }
 
   li {
