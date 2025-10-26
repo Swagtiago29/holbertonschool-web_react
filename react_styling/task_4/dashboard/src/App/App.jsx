@@ -72,7 +72,7 @@ class App extends React.Component {
 
     return (
       <>
-        {/*<Notifications notifications={notificationsList} />*/}
+        <Notifications notifications={notificationsList} />
         <Header />
         {isLoggedIn ?
           <BodySectionWithMarginBottom title={'Course list'}>
@@ -84,7 +84,7 @@ class App extends React.Component {
           </BodySectionWithMarginBottom>
         }
         <BodySection title={'News from the School'}>
-          <p className='mb-10'>Holberton School News goes here</p>
+          <p className=''>ipsum Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique, asperiores architecto blanditiis fuga doloribus sit illum aliquid ea distinctio minus accusantium, impedit quo voluptatibus ut magni dicta. Recusandae, quia dicta?</p>
         </BodySection>
         <Footer />
       </>
