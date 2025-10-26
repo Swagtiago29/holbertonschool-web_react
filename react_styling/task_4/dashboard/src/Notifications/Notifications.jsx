@@ -29,10 +29,11 @@ class Notifications extends React.Component {
 
         const { notifications } = this.props
         const { displayDrawer } = this.props
+        const jumpyStyle = notifications.length > 0 && !displayDrawer ? 'animate-bounce' : ''
 
         return (
             <div className="notifications-container fixed w-[450px] max-[912px]:w-full flex flex-col top-0 right-0 p-2 max-[912px]:p-0">
-                <div className="notification-title text-right text-lg max-[912px]:hidden">Your notifications</div>
+                <div className={`notification-title text-right text-lg ${jumpyStyle} max-[912px]:p-1`}>Your notifications</div>
                 {displayDrawer && (
                     <div className="root-notifications relative border-2 border-dashed border-(--main-color)
                                     max-[912px]:w-full
@@ -40,7 +41,7 @@ class Notifications extends React.Component {
                                     max-[912px]:fixed
                                     max-[912px]:p-2
                                     max-[912px]:bg-white"
-                                    >
+                    >
                         {notifications.length === 0 ? (
                             <div className='ml-1'>No new notification for now</div>
                         ) : (
