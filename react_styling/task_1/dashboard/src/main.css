@@ -1,10 +1,8 @@
 @import "tailwindcss";
 
-@layer base {
-  :root {
-    --color-table-header: #deb5b5;
-    --color-table-rows: #CDCDCD;
-  }
+@theme {
+  --color-table-header: #deb5b5;
+  --color-table-rows:  #CDCDCD;
 }
 
 @layer base {
