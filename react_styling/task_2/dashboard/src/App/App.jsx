@@ -72,7 +72,7 @@ class App extends React.Component {
     const { isLoggedIn } = this.props
 
     return (
-      <>
+      <div className='flex'>
         <Notifications notifications={notificationsList} />
         <Header />
         {isLoggedIn ?
@@ -88,7 +88,7 @@ class App extends React.Component {
           <p>Holberton School News goes here</p>
         </BodySection>
         <Footer />
-      </>
+      </div>
     )
   }
 }
