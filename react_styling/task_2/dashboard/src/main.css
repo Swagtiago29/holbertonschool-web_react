@@ -1,13 +1,12 @@
 @import "tailwindcss";
 
-@layer base {
-  :root {
-    --color-table-header: #deb5b5;
-    --color-table-rows: #cdcdcd;
-    --main-color: #e1003c;
-    --default-botification-item: blue;
-    --urgent-notification-item: red;
-  }
+@theme {
+  --color-table-header: #deb5b5;
+  --color-table-rows: #cdcdcd;
+  --color-main: #e1003c;
+
+  --color-notification-default: blue;
+  --color-notification-urgent: red;
 }
 
 @layer base {
@@ -24,8 +23,8 @@
   ul {
     @apply list-disc;
   }
-  li{
+
+  li {
     display: list-item;
   }
-
 }
