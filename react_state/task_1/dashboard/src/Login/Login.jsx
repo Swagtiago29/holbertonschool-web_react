@@ -16,16 +16,14 @@ class Login extends React.Component {
     }
 
     handleChangeEmail = (e) => {
-        this.setState({ email: e.target.value },
-            this.validateForm
-        )
+        const email = e.target.value;
+        this.setState({ email }, () => this.validateForm(email, this.state.password));
     }
 
     handleChangePassword = (e) => {
-        this.setState({ password: e.target.value },
-            this.validateForm
-        );
-    };
+        const password = e.target.value;
+        this.setState({ password }, () => this.validateForm(this.state.email, password));
+    }
 
     handleLoginSubmit = (e) => {
         this.setState({ isLoggedIn: true });
@@ -33,12 +31,12 @@ class Login extends React.Component {
     }
 
     validateForm = () => {
-        const {email, password} = this.state;
+        const { email, password } = this.state;
         const emailValidate = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/.test(email)
         const passwordValidate = password.length >= 8
         const enableSubmit = emailValidate && passwordValidate && email != '' && password != ''
 
-        this.setState({enableSubmit})
+        this.setState({ enableSubmit })
     }
 
     render() {
