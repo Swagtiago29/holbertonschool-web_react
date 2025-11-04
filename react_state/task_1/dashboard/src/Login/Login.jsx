@@ -26,8 +26,9 @@ class Login extends React.Component {
     }
 
     handleLoginSubmit = (e) => {
-        this.setState({ isLoggedIn: true });
         e.preventDefault()
+        this.setState({ isLoggedIn: true });
+
     }
 
     validateForm = () => {
