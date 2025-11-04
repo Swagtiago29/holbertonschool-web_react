@@ -16,14 +16,14 @@ class Login extends React.Component {
     }
 
     handleChangeEmail = (e) => {
-        const email = e.target.value;
-        this.setState({ email }, () => this.validateForm(email, this.state.password));
+        const value = e.target.value;
+        this.setState({ email: value }, this.validateForm);
     }
 
     handleChangePassword = (e) => {
-        const password = e.target.value;
-        this.setState({ password }, () => this.validateForm(this.state.email, password));
-    }
+        const value = e.target.value;
+        this.setState({ password: value }, this.validateForm);
+    };
 
     handleLoginSubmit = (e) => {
         e.preventDefault()
