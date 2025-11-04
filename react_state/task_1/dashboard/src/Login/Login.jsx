@@ -34,7 +34,7 @@ class Login extends React.Component {
 
     validateForm = () => {
         const {email, password} = this.state;
-        const emailValidate = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+        const emailValidate = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/.test(email)
         const passwordValidate = password.length >= 8
         const enableSubmit = emailValidate && passwordValidate && email != '' && password != ''
 
