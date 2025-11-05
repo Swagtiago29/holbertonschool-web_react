@@ -5,11 +5,11 @@ class NotificationItem extends React.PureComponent {
     type: 'default',
     value: '',
     html: null,
-    markAsRead: () => { },
+    markNotificationAsRead: () => { },
     id: null
   }
   render() {
-    const { type, value, html, markAsRead, id } = this.props;
+    const { type, value, html, markNotificationAsRead, id } = this.props;
 
     const style = type === 'urgent'
       ? 'text-[var(--urgent-notification-item)] list-disc max-[912px]:list-none max-[912px]:p-2 max-[912px]:border-b-1 border-black'
@@ -21,7 +21,7 @@ class NotificationItem extends React.PureComponent {
           data-notification-type={type}
           className={style}
           dangerouslySetInnerHTML={html}
-          onClick={() => markAsRead(id)}
+          onClick={() => markNotificationAsRead(id)}
         />
       );
     }

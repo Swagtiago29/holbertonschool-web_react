@@ -59,7 +59,7 @@ class Notifications extends React.PureComponent {
                                             type={notif.type}
                                             value={notif.value}
                                             html={notif.html}
-                                            markAsRead={markNotificationAsRead}
+                                            markNotificationAsRead={markNotificationAsRead}
                                         />
                                     ))}
                                 </ul>
