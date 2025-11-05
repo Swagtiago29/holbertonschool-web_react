@@ -30,7 +30,7 @@ class NotificationItem extends React.PureComponent {
       <li
         data-notification-type={type}
         className={style}
-        onClick={() => markAsRead(id)}>
+        onClick={() => markNotificationAsRead(id)}>
         {value}
       </li>
     );
