@@ -18,7 +18,8 @@ class Header extends Component {
         </div>
         {user && user.isLoggedIn && (
           <section id='logoutSection'>
-            Welcome {user.email}{' '}(<a href='#' onClick={(e) => {e.preventDefault(); logOut();}}>logout</a>)
+            Welcome {user.email}{' '}
+            (<a href='#' onClick={(e) => {e.preventDefault(); logOut();}}>logout</a>)
           </section>
         )}
       </>
