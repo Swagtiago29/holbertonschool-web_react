@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useMemo } from 'react';
 import Notifications from '../Notifications/Notifications.jsx';
 import Login from '../Login/Login.jsx';
 import Footer from '../Footer/Footer.jsx';
@@ -26,26 +26,33 @@ function App() {
   ];
 
   const [displayDrawer, setDisplayDrawer] = useState(true);
-  const [user, setUser] = useState(newContext.user);
+  const [user, setUser] = useState(newContext._currentValue.user);
   const [notifications, setNotifications] = useState(notificationsList);
 
   const logIn = useCallback((email, password) => {
     setUser({ email, password, isLoggedIn: true });
-  }, []);
+  }, [setUser]);
 
   const logOut = useCallback(() => {
     setUser({ email: '', password: '', isLoggedIn: false });
-  }, []);
+  }, [setUser]);
 
   const markNotificationAsRead = useCallback((id) => {
     setNotifications((prev) => prev.filter((notif) => notif.id !== id));
-  }, []);
+  }, [setNotifications]);
 
-  const handleDisplayDrawer = useCallback(() => setDisplayDrawer(true), []);
-  const handleHideDrawer = useCallback(() => setDisplayDrawer(false), []);
+  const handleDisplayDrawer = useCallback(() => {
+    setDisplayDrawer(true);
+  }, [setDisplayDrawer]);
+
+  const handleHideDrawer = useCallback(() => {
+    setDisplayDrawer(false);
+  }, [setDisplayDrawer]);
+
+  const contextValue = useMemo(() => ({ user, logOut }), [user, logOut]);
 
   return (
-    <newContext.Provider value={{ user, logOut }}>
+    <newContext.Provider value={contextValue}>
       <Notifications
         notifications={notifications}
         displayDrawer={displayDrawer}
