@@ -52,8 +52,13 @@ function App() {
   ]
 
   const [displayDrawer, setDisplayDrawer] = useState(true)
-  const [user, setUser] = useState(newContext.user)
   const [notifications, setNotifications] = useState(notificationsList)
+  const [user, setUser] = useState({
+    email: '',
+    password: '',
+    isLoggedIn: false
+  })
+
 
   useEffect(() => {
     const handleKeyDown = (e) => {
