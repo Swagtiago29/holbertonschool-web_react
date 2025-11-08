@@ -26,7 +26,7 @@ function App() {
   ];
 
   const [displayDrawer, setDisplayDrawer] = useState(true);
-  const [user, setUser] = useState(newContext._currentValue.user);
+  const [user, setUser] = useState(newContext.user);
   const [notifications, setNotifications] = useState(notificationsList);
 
   const logIn = useCallback((email, password) => {
