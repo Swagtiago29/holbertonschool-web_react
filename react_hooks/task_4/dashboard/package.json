@@ -18,6 +18,8 @@
     "@babel/preset-react": "^7.27.1",
     "@fontsource/roboto": "^5.2.8",
     "@tailwindcss/vite": "^4.1.15",
+    "axios": "^1.13.2",
+    "jest-mock-axios": "^4.9.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
   },
