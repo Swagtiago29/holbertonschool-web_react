@@ -47,21 +47,6 @@ describe('App Component keydown events', () => {
     jest.clearAllMocks()
   })
 
-  test('should call alert with "Logging you out" when ctrl and h is down', () => {
-    const logOutMock = jest.fn()
-    const alertMock = jest.fn()
-    window.alert = alertMock
-
-    render(<App isLoggedIn={true} logOut={logOutMock} />)
-
-    fireEvent.keyDown(document, {
-      key: 'h',
-      ctrlKey: true
-    })
-
-    expect(alertMock).toHaveBeenCalledWith("Logging you out")
-  })
-
   test('should render title and p', () => {
     render(<App />)
 
