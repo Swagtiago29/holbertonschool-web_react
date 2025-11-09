@@ -1,6 +1,6 @@
-import { useState, useCallback, useMemo, useEffect } from 'react';
-import axios from "axios";
+import React, { useState, useCallback, useMemo, useEffect } from 'react';
 import Notifications from '../Notifications/Notifications.jsx';
+import axios from "axios";
 import Login from '../Login/Login.jsx';
 import Footer from '../Footer/Footer.jsx';
 import Header from '../Header/Header.jsx';
@@ -15,9 +15,10 @@ const LoginWithLogging = WithLogging(Login);
 const CourseListWithLogging = WithLogging(CourseList);
 
 function App() {
+
   const [displayDrawer, setDisplayDrawer] = useState(true);
-  const [notifications, setNotifications] = useState([]);
-  const [courses, setCourses] = useState([]);
+  const [notifications, setNotifications] = useState('');
+  const [courses, setCourses] = useState('')
   const [user, setUser] = useState({
     email: "",
     password: "",
@@ -27,16 +28,18 @@ function App() {
   useEffect(() => {
     const fetchNotifications = async () => {
       try {
-        const response = await axios.get("/notifications.json");
-        const data = response.data;
+        const response = await axios.get("/notifications.json")
+        const data = response.data
+
         const latest = getLatestNotification();
-        setNotifications([...data]);
-      } catch (error) {
+        setNotifications([...data])
+      }
+      catch (error) {
         console.error("Failed to fetch notifications:", error);
       }
-    };
-    fetchNotifications();
-  }, []);
+    }
+    fetchNotifications()
+  }, [notifications])
 
   useEffect(() => {
     const fetchCourses = async () => {
@@ -44,31 +47,35 @@ function App() {
         const response = await axios.get("/courses.json");
         setCourses(response.data);
       } catch (error) {
-        console.error("Failed to fetch courses:", error);
+        if (process.env.NODE_ENV === "development") {
+          console.error("Failed to fetch courses:", error);
+        }
       }
+
     };
+
     fetchCourses();
   }, [user]);
 
   const logIn = useCallback((email, password) => {
     setUser({ email, password, isLoggedIn: true });
-  }, []);
+  }, [setUser]);
 
   const logOut = useCallback(() => {
     setUser({ email: '', password: '', isLoggedIn: false });
-  }, []);
+  }, [setUser]);
 
   const markNotificationAsRead = useCallback((id) => {
     setNotifications((prev) => prev.filter((notif) => notif.id !== id));
-  }, []);
+  }, [setNotifications]);
 
   const handleDisplayDrawer = useCallback(() => {
     setDisplayDrawer(true);
-  }, []);
+  }, [setDisplayDrawer]);
 
   const handleHideDrawer = useCallback(() => {
     setDisplayDrawer(false);
-  }, []);
+  }, [setDisplayDrawer]);
 
   const contextValue = useMemo(() => ({ user, logOut }), [user, logOut]);
 
