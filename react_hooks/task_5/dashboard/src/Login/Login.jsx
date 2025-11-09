@@ -1,7 +1,6 @@
-import PropTypes from 'prop-types';
 import useLogin from '../hooks/useLogin';
 
-function Login({ login }) {
+function Login({ logIn }) {
     const {
         email,
         password,
@@ -9,7 +8,7 @@ function Login({ login }) {
         handleEmailChange,
         handlePasswordChange,
         handleSubmit,
-    } = useLogin(login);
+    } = useLogin(logIn);
 
     return (
         <div className="App-body border-t-4 border-(--main-color) pt-3 mb-70 max-[912px]:mb-50 max-[912px]:flex max-[912px]:flex-col">
@@ -47,9 +46,5 @@ function Login({ login }) {
     );
 
 }
-
-Login.propTypes = {
-    login: PropTypes.func.isRequired,
-};
 
 export default Login;
