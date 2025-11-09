@@ -1,44 +1,28 @@
-import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import useLogin from './useLogin';
 
-function Login({ email = '', password = '', logIn = () => { } }) {
-    const [formData, setFormData] = useState({
+function Login({ login }) {
+    const {
         email,
         password,
-    });
-    const [enableSubmit, setEnableSubmit] = useState(false);
-
-    useEffect(() => {
-        const validateForm = () => {
-            const { email, password } = formData;
-            const emailValidate = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/.test(email);
-            const passwordValidate = password.length >= 8;
-            setEnableSubmit(emailValidate && passwordValidate && email !== '' && password !== '');
-        };
-        validateForm();
-    }, [formData.email, formData.password, formData]);
-
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData((prev) => ({ ...prev, [name]: value }));
-    };
-
-    const handleLoginSubmit = (e) => {
-        e.preventDefault();
-        logIn(formData.email, formData.password);
-    };
+        enableSubmit,
+        handleEmailChange,
+        handlePasswordChange,
+        handleSubmit,
+    } = useLogin(login);
 
     return (
         <div className="App-body border-t-4 border-(--main-color) pt-3 mb-70 max-[912px]:mb-50 max-[912px]:flex max-[912px]:flex-col">
             <p className="mb-5">Login to access the full dashboard</p>
-            <form className="max-[912px]:flex max-[912px]:flex-col" onSubmit={handleLoginSubmit}>
+            <form className="max-[912px]:flex max-[912px]:flex-col" onSubmit={handleSubmit}>
                 <label htmlFor="email">Email</label>
                 <input
                     className="ml-1 max-[912px]:ml-0 border rounded h-6 max-[912px]:w-[60%]"
                     id="email"
                     name="email"
                     type="email"
-                    value={formData.email}
-                    onChange={handleChange}
+                    value={email}
+                    onChange={handleEmailChange}
                 />
                 <label className="ml-3 max-[912px]:ml-0 max-[912px]:mt-2" htmlFor="password">
                     Password
@@ -48,8 +32,8 @@ function Login({ email = '', password = '', logIn = () => { } }) {
                     id="password"
                     name="password"
                     type="password"
-                    value={formData.password}
-                    onChange={handleChange}
+                    value={password}
+                    onChange={handlePasswordChange}
                 />
                 <input
                     className={`px-1 max-[912px]:ml-0 ml-3 max-[912px]:mt-2 rounded border w-[35px] ${!enableSubmit ? 'opacity-50 cursor-not-allowed' : ''
@@ -61,6 +45,11 @@ function Login({ email = '', password = '', logIn = () => { } }) {
             </form>
         </div>
     );
+
 }
+
+Login.propTypes = {
+    login: PropTypes.func.isRequired,
+};
 
 export default Login;
