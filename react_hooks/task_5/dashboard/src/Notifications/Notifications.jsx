@@ -33,7 +33,7 @@ function Notifications({
 
       {displayDrawer && (
         <div
-          className="root-notifications relative border-2 border-dashed border-(--main-color)
+          className="root-notifications relative border-2 border-dashed border-(--main-color) bg-white
                       max-[912px]:w-full
                       max-[912px]:h-full
                       max-[912px]:fixed

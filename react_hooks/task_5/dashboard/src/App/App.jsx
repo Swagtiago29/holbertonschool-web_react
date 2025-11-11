@@ -39,7 +39,7 @@ function App() {
       }
     }
     fetchNotifications()
-  }, [notifications])
+  }, [])
 
   useEffect(() => {
     const fetchCourses = async () => {
@@ -67,6 +67,7 @@ function App() {
 
   const markNotificationAsRead = useCallback((id) => {
     setNotifications((prev) => prev.filter((notif) => notif.id !== id));
+    console.log('xd')
   }, [setNotifications]);
 
   const handleDisplayDrawer = useCallback(() => {
